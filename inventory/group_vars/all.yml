@@ -1,0 +1,6 @@
+---
+ubuntu_ntp_package: chrony
+ubuntu_ntp_service: chrony
+
+centos_ntp_package: chrony
+centos_ntp_service: chronyd
