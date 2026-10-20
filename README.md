@@ -6,7 +6,7 @@ An automated configuration management project demonstrating how to manage, provi
 
 ## 📌 Architecture Overview
 
-![Ansible AWS Multi-OS Architecture Diagram](./Ansible%20AWS%20Multi-OS%20Architecture%20Diagram.png)
+![Ansible AWS Multi-OS Architecture Diagram](architecture-diagram.png)
 
 ---
 
@@ -45,7 +45,7 @@ flowchart LR
 
 ```text
 Multi-OS-Configuration-Management-Using-Ansible/
-├── Ansible AWS Multi-OS Architecture Diagram.png   # System architecture diagram
+├── architecture-diagram.png                        # System architecture diagram
 ├── README.md                                       # Project documentation
 ├── ansible.cfg                                     # Ansible global settings
 ├── inventory/
