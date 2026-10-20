@@ -1,20 +1,34 @@
+
 ---
 - name: Configure time synchronization across Linux distributions
-  hosts: ubuntu
+  hosts: linux_servers
   become: true
   gather_facts: true
 
   tasks:
     - name: Install Chrony on Ubuntu
       ansible.builtin.apt:
-        name: "{{ ubuntu_ntp_package }}"
+        name: chrony
         state: present
         update_cache: true
       when: ansible_distribution == "Ubuntu"
 
+    - name: Install Chrony on CentOS
+      ansible.builtin.dnf:
+        name: chrony
+        state: present
+      when: ansible_distribution == "CentOS"
+
     - name: Start and enable Chrony on Ubuntu
       ansible.builtin.service:
-        name: "{{ ubuntu_ntp_service }}"
+        name: chrony
         state: started
         enabled: true
       when: ansible_distribution == "Ubuntu"
+
+    - name: Start and enable Chronyd on CentOS
+      ansible.builtin.service:
+        name: chronyd
+        state: started
+        enabled: true
+      when: ansible_distribution == "CentOS"
