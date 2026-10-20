@@ -83,6 +83,11 @@ ansible ubuntu -m ansible.builtin.command -a "df -h"
 ansible ubuntu -b -m ansible.builtin.command -a "systemctl is-active chrony"
 ```
 
+### Test all Linux servers in parent group (`:children`):
+```bash
+ansible linux_servers -m ansible.builtin.ping
+```
+
 ### Test all hosts in inventory:
 ```bash
 ansible all -m ping
